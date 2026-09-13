@@ -20,6 +20,7 @@ The skill also distinguishes between things that are just annoying (someone tryi
 ## What's in this repo
 
 - **`injection-check.skill`** — the packaged skill itself (a zip containing `SKILL.md`). Drop this into your Claude Code skills so it loads automatically.
+- **`SKILL.md`** — a plain-text copy of the exact same file, kept only so it's readable straight from GitHub. `.skill` is a zip archive, so GitHub can't render it inline the way it renders this README — click it and you'll just get a "binary file" notice and a download link. If you're just here to read the actual prompt, read this file instead of downloading the `.skill`.
 - **`tests/`** — a small golden-set eval so I can check the skill actually behaves the way it claims to, instead of just trusting my own prompt:
   - `cases.json` — 10 test documents: some with real injections at seams, some with things that *look* suspicious but are legitimate (an instructor's word-check, a dev's TODO comment, a license clause), and one genuinely ambiguous case.
   - `run_eval.py` — sends each case through the skill's actual instructions via the Claude API, then uses a second cheap model to grade whether the response correctly flagged (or correctly stayed quiet).
